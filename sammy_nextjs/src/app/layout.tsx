@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Headers from "./components/Header";  
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+<Headers title="Sammy's Next.js App" textClassName="text-amber-300" headerClassName="bg-black p-4 shadow-md rounded-md m-4">
+  {null}
+</Headers>
+        <main>
         {children}
+        </main>
       </body>
     </html>
   );
